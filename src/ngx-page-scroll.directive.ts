@@ -66,6 +66,9 @@ export class PageScroll implements OnChanges, OnDestroy {
     @Input()
     public pageScroll: string = null;
 
+    @Input()
+    public pageScrollDelay = 0;
+
     @Output()
     pageScrollFinish: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -142,7 +145,7 @@ export class PageScroll implements OnChanges, OnDestroy {
                         // use a timeout to start scrolling as soon as the stack is cleared
                         setTimeout(() => {
                             this.scroll();
-                        }, 0);
+                        }, this.pageScrollDelay);
                     } else if (routerEvent instanceof NavigationError || routerEvent instanceof NavigationCancel) {
                         subscription.unsubscribe();
                     }
