@@ -121,11 +121,7 @@ Temporary Items
 .apdisk
 
 # ngx-page-scroll specific
-*.js.map
-*.d.ts
-*.metadata.json
-*.ngsummary.json
-ngx-page-scroll*.js
+
 /test/e2e/*.js
 /test/*.js
 /ssh
